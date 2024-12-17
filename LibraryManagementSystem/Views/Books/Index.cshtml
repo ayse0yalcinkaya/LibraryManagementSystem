@@ -1,0 +1,31 @@
+﻿@model IEnumerable<LibraryManagementSystem.Models.Book>
+
+<h1>Kitaplar</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Ad</th>
+            <th>Yazar</th>
+            <th>Yayın Yılı</th>
+            <th>ISBN</th>
+            <th>Detay</th>
+            <th>Edit</th> 
+            <th>Delete</th> 
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var book in Model)
+        {
+            <tr>
+                <td><a asp-controller="Books" asp-action="Details" asp-route-id="@book.Id">@book.Title</a></td>
+                <td>@book.Author</td>
+                <td>@book.PublicationYear</td>
+                <td>@book.ISBN</td>
+                <td><a asp-controller="Books" asp-action="Details" asp-route-id="@book.Id">Detay</a></td>
+                <td><a asp-controller="Books" asp-action="Edit" asp-route-id="@book.Id">Düzenle</a></td>
+                <td><a asp-controller="Books" asp-action="Delete" asp-route-id="@book.Id">Sil</a></td>
+            </tr>
+        }
+    </tbody>
+</table>

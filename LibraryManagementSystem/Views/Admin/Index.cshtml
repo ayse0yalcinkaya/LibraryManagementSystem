@@ -1,0 +1,15 @@
+﻿@{
+    var isAdmin = User.IsInRole("Admin");
+}
+
+<h2>Admin Dashboard</h2>
+
+@if (isAdmin)
+{
+    <p>Merhaba Admin!</p>
+    <a href="/Admin/ManageUsers">Kullanıcıları Yönet</a>
+}
+else
+{
+    <p>Bu sayfaya Erişiminiz yoktur.</p>
+}

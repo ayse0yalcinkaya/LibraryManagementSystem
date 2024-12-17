@@ -1,0 +1,47 @@
+﻿@model LibraryManagementSystem.Models.Book
+
+<h1>Kitap Ekle</h1>
+
+<form asp-action="Create" method="post">
+    <div class="form-group">
+        <label for="Title">Kitap Adı</label>
+        <input type="text" asp-for="Title" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label for="Author">Yazar</label>
+        <input type="text" asp-for="Author" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label for="PublicationYear">Yayın Yılı</label>
+        <input type="number" asp-for="PublicationYear" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label for="ISBN">ISBN</label>
+        <input type="text" asp-for="ISBN" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label for="Genre">Tür</label>
+        <input type="text" asp-for="Genre" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label for="Publisher">Yayınevi</label>
+        <input type="text" asp-for="Publisher" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label for="PageCount">Sayfa Sayısı</label>
+        <input type="number" asp-for="PageCount" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label for="Language">Dil</label>
+        <input type="text" asp-for="Language" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label for="Summary">Özet</label>
+        <textarea asp-for="Summary" class="form-control"></textarea>
+    </div>
+    <div class="form-group">
+        <label for="AvailableCopies">Mevcut Kopyalar</label>
+        <input type="number" asp-for="AvailableCopies" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary">Kaydet</button>
+</form>

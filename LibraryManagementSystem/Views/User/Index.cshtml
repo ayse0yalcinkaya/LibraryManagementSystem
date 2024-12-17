@@ -1,0 +1,30 @@
+﻿@model IEnumerable<ApplicationUser>
+
+<h1>Kullanıcılar</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Kullanıcı Adı</th>
+            <th>Email</th>
+            <th>Ad Soyad</th>
+            <th>İşlemler</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model)
+        {
+            <tr>
+                <td>@user.UserName</td>
+                <td>@user.Email</td>
+                <td>@user.FullName</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@user.Id" class="btn btn-warning">Düzenle</a>
+                    <form asp-action="Delete" asp-route-id="@user.Id" method="post" style="display:inline;">
+                        <button type="submit" class="btn btn-danger">Sil</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a asp-action="Create" class="btn btn-primary">Yeni Kullanıcı</a>
